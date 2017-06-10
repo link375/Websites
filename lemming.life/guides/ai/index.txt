@@ -1,0 +1,19 @@
+title:::Artificial Intelligence
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Artificial Intelligence</h1>
+
+<p>(WORK IN PROGRESS)</p>
+
+
+<div id="nextPagesContainer">
+<h3>Topics</h3>
+</div>
+
+<div id="previousPagesContainer">
+<h3>Other Guides</h3>
+</div>
+</div>

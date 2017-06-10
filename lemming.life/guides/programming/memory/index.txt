@@ -1,0 +1,148 @@
+title:::Memory
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Memory</h1>
+<p>A program is memory that is established and processed. Usually a compiler is in charge of turning a higher level language to a lower target code language. The target code language may be assembly. Eventually this assembly language is then turned into a collection of bits in a memory pool. The program bits is divided into several segments, which may be data, code, stack, and heap.</p>
+
+<p>Visually a program may be follow this order: [data] [code] [heap] [stack].  Another configuration is [code] [data] [heap] [stack]. The order of code and data segments does not seem to matter too much. If you were creating the large block of memory for this program, in say C or C++, you would just do a char array of size N.</p>
+
+<h2>Program Example</h2>
+<p>Below a bmax example that shows a simple program that will output "hello, world3".</p>
+<pre class="codebox">print "hello, world3"</pre>
+
+<p>The equivalent assembly may look something like this:</p>
+<pre class="codebox">
+chrSize .INT    1
+msg     .BYT    'h'
+        .BYT    'e'
+        .BYT    'l'
+        .BYT    'l'
+        .BYT    'o'
+comma   .BYT    ','
+msg2    .BYT    'w'
+        .BYT    'o'
+        .BYT    'r'
+        .BYT    108 ; Assembler may support a numerical code
+three   .INT    3
+LDR     R1 chrSize
+LDA     R2 msg      ; Loads the address of msg
+LDR     R3 R2       ; Loads the value at msg
+TRP     3           ; Prints h
+ADD     R2 R1       ; Increments the address by R1
+LDR     R3 R2       ; Loads the value at R2
+TRP     3           ; Prints e
+ADD     R2 R1
+LDR     R3 R2
+TRP     3           ; Prints l
+ADD     R2 R1
+LDR     R3 R2
+TRP     3           ; Prints l
+ADD     R2 R1
+LDR     R3 R2
+TRP     3           ; Prints o
+LDR     R3 comma    ; Loads the comma character
+TRP     3           ; Prints ,
+LDA     R2 msg2     ; Loads the address of msg2
+LDR     R3 R2       ; Loads the value at msg2
+TRP     3           ; Prints w
+ADI     R2 1        ; Increments the address by 1
+LDR     R3 R2       ; Loads the value at R2
+TRP     3           ; Prints o
+ADI     R2 1
+LDR     R3 R2
+TRP     3           ; Prints r
+ADI     R2 1
+LDR     R3 R2
+TRP     3           ; Prints l
+SUB     R3 R3       ; Wipe out the value in register.
+ADI     R3 100      ; 100 is the code for 'd'
+TRP     3           ; Prints d
+LDR     R3 three
+TRP     1           ; Prints 3
+TRP     0           ; End the program</pre>
+<p>Note that I gave myself some liberties to show several ways of achieving the same thing. But do note that such a simple program does require a lot of lines.</p>
+
+<h2>Segments</h2>
+<ul>
+  <li><a href="#section_data">Data</a></li>
+  <li><a href="#section_code">Code Segment</a></li>
+  <li><a href="#section_stack">Stack Segment</a></li>
+  <li><a href="#section_heap">Heap Segment</a></li>
+</ul>
+
+<h2 id="section_data">Data Segment</h2>
+<p>The data segment of a program holds global level data.  Usually one can store ints, chars, arrays, etc. One may have a leading label, followed by the name of very basic type, and then the value. Of the assembly example the following goes into the data segment.</p>
+<pre class="codebox">
+chrSize .INT    1
+msg     .BYT    'h'
+        .BYT    'e'
+        .BYT    'l'
+        .BYT    'l'
+        .BYT    'o'
+comma   .BYT    ','
+msg2    .BYT    'w'
+        .BYT    'o'
+        .BYT    'r'
+        .BYT    108 ; Assembler may support a numerical code
+three   .INT    3</pre>
+
+<p>The assembler will turn the assembly into a collection of zeros and ones.  Note that below I added spaces, new lines, and a little comment. Without these aids it would ber very hard to see what is going on.</p>
+<pre class="codebox">
+0000 0000 0000 0000 0000 0000 0000 0001   // 1
+0110 1000 // h
+0110 0101 // e
+0110 1100 // l
+0110 1100 // l
+0110 1111 // o
+0010 1100 // ,
+0111 0111 // w
+0110 1111 // o
+0111 0010 // r
+0110 1100 // l
+0000 0000 0000 0000 0000 0000 0000 0011   // 3
+</pre>
+<p>To do manual conversion of character one has to use some kind of table, in the case above it is a ASCII table. Once we have the code we then turn the number into binary that fits the number of bits required (for chars it is 8 bits and for ints we use 32 bits).</p>
+
+<p>Note that the "data" segment is not needed at all in programs. For example you may have noticerd that the "d" letter of the "world" word is not in the data segment. That is, the 'd' is created in the code segment by using a numerical code.</p>
+
+<h2 id="section_code">Code Segment</h2>
+<p>A program should manipulate data. In order to do so we use instructions. An instruction has an opcode and several operands. The LDR, LDA, TRP, ADD, SUB of the example assembly are opcodes. The R1, R2, R3, some number, or some label name are our operands.</p>
+
+<p>A register is a container that holds some value. Usually we have to load some value into a register first, and then we manipulate the register. The R1, R2, R3, etc., are registers. There can be registers not named with a leading "R".</p>
+
+<p>Just as done with the data segment the instruction has tp be turned into zeros and ones. Each of the instructions in our case are 12 bytes (96 bits)!</p>
+<pre class="codebox">TRP 3</pre>
+<p>becomes</p>
+<pre class="codebox">
+0000 0000 0000 0000 0000 0000 0001 0101  // 21
+0000 0000 0000 0000 0000 0000 0000 0011  // 3
+0000 0000 0000 0000 0000 0000 0000 0011  // 0</pre>
+
+<p>The TRP 3 instruction prints a character from register 3. The TRP has an opcode number of 21 in my case, but it could be anything you specify. As you may have noticed the approach of making instructions of size 12 could seem excessive -- the 21, 3, and 0 take a lot of bits.  When optimized it may be worth changing this. but I recommend checking <b>CISC</b> and <b>RISC</b> architecture differences in order to determine the pros and cons of variable size vs fixed size.</p>
+
+<p>It is likely that you'll need a two pass assembler. The first pass is generally interested in ensuring that the syntax is correct. For example, does the declaration for code segment data meet the criteria specified? Are the instructions within the specifications?  Usually on first pass we can also be concerned with determining the location of a label name, and perhaps even where is the first instruction address. On a second pass we may check, whenever a label is mentioned as an operand, to see if the label has been specified.</p> 
+
+<p>Regarding the first instruction, can you guess what the instruction address is?  To determine the instruction address we look at the way we established our program, in my case the data segment came first. Imagine the address of <i>chrSize</i>, it is 0, then the address of <i>msg</i> it is 4, the address of the 'e' is 5. We consider the size of the type, so we add 4 (for .INT) and 1 for (.BYT). Eventually we find that the address of the first instruction is 18.</p>
+
+<p>When we run our program we need a <b>Program Counter (PC)</b>. The PC is a register that holds the address to the next instruction. When the program executes we load the current instruction pointed by the PC, increment the PC by the instruction size (12 bytes), and then we operate on the instruction loaded. Since we know the structure of the instruction (opcode, operand1, operand2), then we can begin manipulating the data. The PC increment is easy if the size of the instruction is fixed.</p>
+
+<p>You can see that if our PC ever goes into our data segment then we may get unexpected behaviors. Also, if the PC ever goes beyond the code segment then we are going to run into trouble. For this reason it is important that we consider the way this PC is manipulated. In programming we have if statements, while statements, function calls and returns that change where this PC is pointing to. The way it is done is by determining addresses we wish to jump to (either some register having an address or loading some label address), and then have some opcode (such as JMP or JMR) that will be used for that branching.</p>
+
+<p>Functions and Methods are part of the Code segment. Essentially functions and methods are just more instructions to work on. However, they heavily rely on elements of the Stack Segment for the data which they are operating on.</p>
+
+<h2 id="section_stack">Stack Segment</h2>
+<p>The stack is a portion of memory that holds temporary data. If you never made a function call then you would not need a stack, however if you wish to make function calls you need a place in memory to store data. The way a stack works is by having some base address from which it starts, which we call a <b>Stack Base (SB)</b>. This SB is a register with the address at the bottom of the stack. A function that is going to be called needs a <b>Stack Pointer (SP)</b> which has an address that points to the top of the stack (the next available position). The currently called function uses a <b>Frame Pointer (FP) </b> 
+ which is the base address for the function that  one is currently working on. This FP should never go beyond some <b>Stack Limit (SL)</b>, this is known as <b>Stack Overflow</b>.  When we perform a function call we need to setup a function "<b>frame</b>". The frame must be big enough to store passed parameters, local variables, temporary variables, a return address, a <b>previous frame pointer (PFP)</b>, and depending if we have objects a "this".  Calling functions require this allocation, and when we return from a function we need to deallocate. The SP should never go below the SB, so it is good to check when deallocating the function. We usually visuallize a stack as coming from the bottom of the memory (a higher address) to a lower portion of the memory (a lower address). For easy management of a stack frame it is good to have each parameter (argument), local, and temp take the same amount of space (4 bytes is good). It may be a bit hard to visualize a stack, so eventually I'll add some drawings.</p>
+
+<p>Note that the PC, SB, SP, FP, SL may be registers since they should hold certain values that we may need in a virtual machine.</p>
+
+<p>Eventually I may add some example code on how to do a function call.</p>
+
+<h2 id="section_heap">Heap Segment</h2>
+<p>The heap is a section of memory that is concerned with <b>objects</b>. The objects in the heap are generally a block of memory that contains the local variables of a class. Every time we create an object we have to save a pointer (a local) in the stack that then points to the position in memory of the heap where the object resides. When we allocate an object we can move the SL lower (a higher address). Depending on the architecture of a virtual machine there may be manual dealocation of objects (aka "delete") or garbage collection. The management of the heap can be quite complicated so for now I will end here.<p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

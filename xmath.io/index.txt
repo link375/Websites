@@ -1,0 +1,113 @@
+title:::Basic Maths
+listNextPages:::false
+listPreviousPages:::false
+cssjs:::<style>
+
+table, tr, td {
+  border: 1px solid grey;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tr.title {
+  text-align:center;
+}
+
+form {
+  width: 100%;
+  margin:0; padding: 0;
+  text-align:center;
+}
+
+input {
+  display: inline-block;
+  text-align:center;
+  padding:0; margin: 0;
+}
+
+</style>
+firstContent:::
+content:::<h1><<<title>>></h1>
+
+<div class="sheet" ng-app="mathApp" ng-controller="mathCtrl">
+<form>
+  <input type="number" ng-model="x" id="xInput" step="0.01" required>
+  <input type="number" ng-model="y" step="0.01" required>
+</form>
+<br />
+
+<table id="dataTable">
+<tr class="title">
+  <td><b>Operation</b></td>
+  <td><b>Result</b></td>
+</tr>
+<tr>
+  <td>Addition</td>
+  <td>{{ x + y }}</td>
+</tr>
+<tr>
+  <td>Difference</td>
+  <td>{{ x - y }}</td>
+</tr>
+<tr>
+  <td>Multiplication</td>
+  <td>{{ x * y}}</td>
+</tr>
+<tr>
+  <td>Division</td>
+  <td>{{ x / y }}</td>
+</tr>
+<tr>
+  <td>Modulo</td>
+  <td> {{ x % y }}</td>
+</tr>
+<tr>
+  <td>% Change</td>
+  <td> {{ (y - x) / x * 100 }}%</td>
+</tr>
+<tr>
+  <td>Gained</td>
+  <td>{{y - x}}</td>
+</tr>
+<tr>
+  <td>Multiplied</td>
+  <td><b>{{ y/x }}</b></td>
+</tr>
+<tr>
+  <td>Power</td>
+  <td>{{ doPow() }}</td>
+</tr>
+</table>
+
+
+<br />
+<pre class="note">Note: computers have numerical limitations.</pre>
+</div>
+
+<script>
+var app = angular.module("mathApp", []);
+app.controller('mathCtrl', 
+  function($scope) {
+    $scope.doPow = function() { return Math.pow($scope.x, $scope.y); };
+  }
+);
+document.getElementById("xInput").focus()
+</script>
+</div>

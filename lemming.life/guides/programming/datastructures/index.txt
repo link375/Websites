@@ -1,0 +1,20 @@
+title:::Data Structures
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Data Structures</h1>
+
+<ul>
+<li>Arrays</li>
+<li>Linked List</li>
+<li>Double Linked List</li>
+<li>Queue</li>
+<li>Priority Queue</li>
+<li>Map / Dictionary / Associative Arrays </li>
+<li>Trees</li>
+</ul>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

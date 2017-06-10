@@ -1,0 +1,30 @@
+title:::Lemming Life
+cleanUrl:::lemming.life
+debugUrl:::file:///op/websites/_export/<<<cleanUrl>>>
+releseaUrl:::http://<<<cleanUrl>>>
+url:::<<<releseaUrl>>>
+html:::
+cssjs:::
+<meta charset="UTF-8"> 
+<link rel="stylesheet" type="text/css" href="<<<url>>>/cssjs/style.css">
+<script src="<<<url>>>/cssjs/script.js"></script>
+
+header:::
+<div id="topNavContainer">
+  <div class="itemImg"><a href="<<<url>>>/index.html"><img src="<<<url>>>/images/lemming-life.png" id="logo" /></a></div>
+  <div id="navItems">
+    <div class="item"><a href="<<<url>>>/index.html">Home</a></div>
+    <div class="item"><a href="<<<url>>>/projects/index.html">Projects</a></div>
+    <div class="item"><a href="<<<url>>>/guides/index.html">Guides</a></div>
+    <div class="item"><a href="<<<url>>>/websites/index.html">Websites</a></div>
+    <div class="item"><a href="https://github.com/lemming-life/" target="_blank">Github</a></div>
+    <div class="item"><a href="<<<url>>>/support/index.html">Support</a></div>
+    <div class="item"><a id="liame" href="">Contact</a></div>
+  </div>
+</div>
+
+
+footer:::
+<div class="footer">
+  <div class="middle">&copy;<span id="currentYear"></span> <<<title>>></div>
+</div>

@@ -1,0 +1,68 @@
+title:::Principles
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Principles</h1>
+<p>There is no one way of writing code. After all, in order for the program to run we just need to structure it in some way that the compiler will be able to understand. This flexibility in programming can yield pieces of beautiful art or some of the most headache inducing code that one must read.  It seems that writing good code requires some restriction that we have to try to adhere to. These restrictions and practices are calledl <b>principles</b>. It is my intention to share some principles that I have learned in the last few years.</p>
+
+<h2>Principles List</h2>
+<ul>
+<li>DRY - Don't Repeat Yourself</li>
+<li>Program to an Interface</li>
+<li>Composition over Inheritance</li>
+<li>Single Responsbility</li>
+</ul>
+
+<h2>DRY - Don't Repeat Yourself</h2>
+<p>This is a principle of the lazy programmer. Even in natural language it is odd when repetition occurs. For example. if when meeting you someone he says "hi" to you, and then you say "hi" back, and the person says "hi" again then one can have an ackward feeling. When programming it is also best to avoid repetition. Here's an example in which we are trying to determine if a variable x is less than or greater than 2, if it is then make the x be a 3, otherwise assign x to be 4.</p>
+
+<h4>Obvious DRY violator</h4>
+<div class="codebox">
+// c++
+#include &lt;iostream&gt;<br />
+using namespace std;<br />
+<br />
+int main() {<br />
+&nbsp; int x = 1;<br />
+&nbsp;<br />
+&nbsp; if (x &lt; 2) {<br />
+&nbsp; &nbsp; &nbsp; x = 3;<br />
+&nbsp; } else if (x &gt; 2) {<br />
+&nbsp; &nbsp; &nbsp; x = 3;<br />
+&nbsp; } else {<br />
+&nbsp; &nbsp; &nbsp; x = 4;<br />
+&nbsp; }<br />
+&nbsp;<br />
+&nbsp; cout &lt;&lt; x;<br />
+&nbsp; return 0;<br />
+}
+</div>
+
+<h4>Removing DRY violation</h4>
+<div class="codebox">
+// c++
+// Example program<br />
+#include &lt;iostream&gt;<br />
+using namespace std;<br />
+<br />
+int main() {<br />
+&nbsp; int x = 1;<br />
+&nbsp;<br />
+&nbsp; if (x &lt; 2 || x &gt; 2) {<br />
+&nbsp; &nbsp; &nbsp; x = 3;<br />
+&nbsp; } else {<br />
+&nbsp; &nbsp; &nbsp; x = 4;<br />
+&nbsp; }<br />
+&nbsp;<br />
+&nbsp; cout &lt;&lt; x;<br />
+&nbsp; return 0;<br />
+}
+</div>
+<p>By writing code that abides by DRY we save ourselves a few lines of code, make our lives easier by improving readability, and if need be we can debug our programs faster. Always try to write DRY code.</p>
+
+<p>(WORK IN PROGRESS)</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

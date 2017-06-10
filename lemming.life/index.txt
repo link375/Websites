@@ -1,0 +1,41 @@
+title:::Home
+listNextPages:::false
+listPreviousPages:::false
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+
+<h2>Code Projects</h2>
+<hr>
+<ul>
+<li><a href="projects/drysitebuilder/index.html">DRY Site Builder</a>: A static website builder using D for compilation and BlitzMax for graphical user interface.</li>
+<li><a href="projects/pathfinder/index.html" >PathFinder</a>: A folder and file navigator for Mac with path text box. (wip)</li>
+</ul>
+
+<h2>Guides</h2>
+<hr />
+<ul>
+<li><a href="guides/programming/index.html">Programming</a></li>
+<li><a href="guides/ai/index.html">Artificial Intelligence</a></li>
+</ul>
+
+<h2>Websites</h2>
+<hr />
+<ul>
+<li><a href="http://xmath.io" target="_blank">xMath.io</a>: Math operations, calculators, conversions, timers, and more. Uses Angular JS.</li>
+</ul>
+
+<h2>Links</h2>
+<hr />
+<ul>
+  <li><a href="https://github.com/lemming-life/" target="_blank">Github</a></li>
+  <li><a href="support/index.html">Support</a></li>
+</ul>
+
+<div class="center">Features:
+<a href="https://www.youtube.com/watch?v=fbxyqeIylHE">historic</a>, 
+<a href="https://www.youtube.com/watch?v=AOOs8MaR1YM" target="_blank">jumper</a>, 
+<a href="https://www.youtube.com/watch?v=vv06KicxKdc" target="_blank">fearless</a>,
+<a href="https://www.youtube.com/watch?v=3unVtVwnhlM">dancer</a>.
+</div>
+</div>

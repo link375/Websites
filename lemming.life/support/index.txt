@@ -1,0 +1,92 @@
+title:::Support
+listNextPages:::false
+listPreviousPages:::false
+cssjs:::<style> div.infoBox{ display:inline-block; padding:5px; border: 1px solid grey; } </style>
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Support</h1>
+<p><<<settings.title>>> is a free website. As such it relies on donations or affiliate links. The hope is that it never needs the type of annoying advertising that ultimately ends up interfering with the user -- besides many people these days just do the unethical ad blocking (the ethical thing is to stop visiting websites that rely on crappy advertising schemes).</p>
+
+<p>Lemming.life runs out of fundinng in <b>2019</b>.</p>
+
+<div class="infoBox">
+<h2>2019 - Not Funded</h2>
+<p>Expenses: $126.28 (expected)</p>
+<p>Donations: $0.00</p>
+<p>Income: $0.00</p>
+</div>
+
+<div class="infoBox">
+<h2>2018 - Not Funded</h2>
+<p>Expenses: $71.88 (expected)</p>
+<p>Donations: $0.00</p>
+<p>Income: $0.00</p>
+</div>
+
+<div class="infoBox">
+<h2>2017 - Funded</h2>
+<p>Expenses: $126.28</p>
+<p>Donations: $0.00</p>
+<p>Seed Money: $126.28</p>
+</div>
+
+<p>Anyways, if you feel anything on the site has been useful then please consider donating via the following methods:</p>
+
+<h2>Digital Currencies</h2>
+<ul>
+<li>Ardor: NXT-SUGL-U6N3-ZTHZ-2V5TQ</li>
+<li>Augur: 0xdc96d3a5977fd565e016fed6880df9b91ec279d9</li>
+<li>Belacoin: HE5MATrNUMZ3k7sc6hQkPwNido6Ycgjaj</li>
+<li>Bitcoin: 1Erg2uMZ9mAGzqq86qpqLAekpHewyRwGG7</li>
+<li>Bitcoin Dark: RT5LYtu88bYvNCDWKJbgutXqXTfzaZYyYd</li>
+<li>Bitcoin Plus: BBh6EyeNBBbkqbvYQFHBYTUo1Stp6uWzk8</li>
+<li>BitCrystals: 1CBdthEj3K6CMT9QM7vEwkTFgiJQyQSxeA</li>
+<li>BlackCoin: B6tK1Ghm3Yt63NDBcPAMe3ds8thb5i1ftQ</li>
+<li>Burst: BURST-NWQG-MNBW-WXKG-G92EQ</li>
+<li>CLAMS: xRwz9W97wTYqdZ2SFV2QGhbR3NDnS8Juar</li>
+<li>Counterparty: 19ac6j2jsHRVXsTrQc47oVpPmaKtjss9Az</li>
+<li>Dash: Xkt3pw4qwLhXkpiHu3h61FbjSNFEXjZhN4</li>
+<li>Decred: DsorJnJG2ycFMBveLVhguJQ3NgQHwbMnsFU</li>
+<li>DigiByte: DAnEWGj9pTFYgDF1hRj6zsCuuv89BcYuEV</li>
+<li>DNotes: DYgYV9N68mnx2gUncmtRDf8uGZu6SQmf93</li>
+<li>Dogecoin: DF4sb8YNkErNeqcpq88JFFAT6En84bkVwA</li>
+<li>Einsteinium: EZU9B8cfMDimMHDXUQqMJ6GLVttEEwkZPZ</li>
+<li>Ethereum: 0xa1f247492a3176a10a1bdd4944a9a26088b4a19d</li>
+<li>Ethereum Classic: 0x989933474ce2da73949adf9ea8e8e2626cdaa0e4</li>
+<li>Expanse: 0x7920bac526223d6d2e22e7b0cde7d1cad317a49b</li>
+<li>Factom: FA2sDbfGD1HFrxaXTmXvRVNv5MFLXKNioAgeETxWQ21Kn9HkhsRr</li>
+<li>Florincoin: FAuAPVksSsR5gdAmtZKiBXDzNr7htXKRLp</li>
+<li>GameCredits: GT8fQtxPcP7Qf8twjwck372aJghGuhFDWY</li>
+<li>Gnosis: 0x6a25a9df30a34e8b2d9d666c81da96a5da2a2d86</li>
+<li>Golem: 0x37c91ad089bda355419216fb785ea84b49019be5</li>
+<li>Gridcoin Research: SGAW9jyjAbJVBcxQZGDciSRGjLFai8yhKN</li>
+<li>Huntercoin: HE7UKNRZ9B3539HBmqjCDhDtaS9gzPJQFr</li>
+<li>LBRY Credits: bQ4Zy3qQ7wxJctovYJByWbMSGbg1sTUf72</li>
+<li>Lisk: 9134874304684733915L</li>
+<li>Litecoin: LYeHYTDGwtvCdnibxtkHVRqTFAzqRwoxAS</li>
+<li>MaidSafeCoin: 1C2YYT6kM6BDtdvCSfXLh4eq6D5kZxKJoH</li>
+<li>Nautiluscoin: NXT-UTPW-ZTXN-EH8Y-89NMJ</li>
+<li>NAVCoin: NiSmPD94CWLmDD4q1GZJB2MLhLCYuapNh2</li>
+<li>Neoscoin: Nf4N1mLn1tQHunoNrknP3FByhJPrVm9HzV</li>
+<li>Namecoin: MxdhewVeFUXzrwvx72fQnRxAhvegTAkYjD</li>
+<li>NXT: NXT-HYGC-BM76-8BZE-BYQCZ</li>
+<li>Omni: 12LtMw6WqRzuorGuZjt6uUTvPPDLTh5TRf</li>
+<li>PascalCoin: 6fbac3ad8f56b909</li>
+<li>Peercoin: PNHxYCBGmPSjpB2KsqmVeHaWJ89ymP1BCG</li>
+<li>Pinkcoin: 2UpUTAuabNJztHjkesNGY1QeKEDvMtJwvX</li>
+<li>PotCoin: PEgEvhmR1rWBCp62ipiQpjXNVgMVtTA1fs</li>
+<li>Primecoin: APp9vgmjbTMX4D1caNNmur9UeW5FJAwxJg</li>
+<li>Radium: Xx5djRj3cmLKuCBDJyvbxTZec8uHUFEYhX</li>
+<li>Steem Dollars: ab25fad99e0f3a6d</li>
+<li>Storjcoin X: 1DJbWNTTQxAJDAr4otpnvnwGPcpEzvTeWL</li>
+<li>STEEM: 824db57224d74532</li>
+<li>Stratis: SQFxMh4382JppgZ1R61w3XkyGF7B8MDXte</li>
+<li>Syscoin: SQPqwGkHCcyMjFctSF6VmBt2eQp8uKFW16</li>
+<li>Synero AMP: 1Ehtus8TskCtAUUFn7WerKC22BJKEg9eR9</li>
+<li>Tether USD: 1M4pagGq9c2bsbf9bxygkMPdYbEneUtgRH</li>
+<li>VeriCoin: VK61Jhoo8pW7Tq27TJaxwfSF9yBxWvNMAU</li>
+<li>Vertcoin: VrWWZ9zJVgGp1gXpdtCz3qvHsaC2qMMegm</li>
+<li>Viacoin: VhrVh7jVxHduzUhM1KqbmoRnUkPUUdwvLj</li>
+<li>Zcash: t1Tu1CY3e7GVz5assm87mJoZpbK6BcTM2iB</li>
+</ul>
+</div>

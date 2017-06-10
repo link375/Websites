@@ -1,0 +1,97 @@
+body {
+  margin: 0; padding: 0;
+  font-family: Aria, Helvetica, sans-serif;
+  font-size: small;
+}
+
+p { margin: 8px 0px 8px 0px; }
+
+h2 { margin: 0; }
+
+h1 {
+  display: block;
+  background-color: #ff6633;
+  margin: 0; padding: 5px;
+  color: #ffffff;
+}
+
+a {
+  color: #3366ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0000ff;
+}
+
+div.sheet {
+  display: block;
+  margin: 0; padding: 5px;
+  width: auto;
+  background-color: #dddddd;
+  word-wrap: break-word;
+}
+
+div.links {
+  margin: 0; padding: 5px;
+  text-align: left;
+  display: block;
+  width: auto;
+}
+
+div.footer {
+  margin: 0; padding: 5px; 
+  text-align: center;
+  display: block;
+  width: auto;
+  background-color: #ff6633;
+}
+
+div.footer a, span {
+  color: #ffffff;
+}
+
+div.footer a:hover {
+  color: #0000ff;
+}
+
+.note {
+  font-size: small;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+div.links {
+  width: 100%;
+  background-color: #dddddd;
+  width: auto;
+  padding: 5px;
+}
+
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: medium;
+  }  
+
+  div.footer, h1, div.links, div.sheet {
+    padding: 10px;
+    width: 600px;
+    margin-left: auto; margin-right: auto;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: large;
+  }  
+
+  div.footer, h1, div.links, div.sheet {
+    width: 800px;
+    margin-left: auto; margin-right: auto;
+    padding: 20px;
+  }
+}

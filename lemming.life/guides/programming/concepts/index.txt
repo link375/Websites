@@ -1,0 +1,410 @@
+title:::Concepts
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Concepts</h1>
+
+<ul>
+<li><a href="#section_datatypes">Data Types</a></li>
+<li><a href="#section_variables">Variables</a></li>
+<li><a href="#section_constantsimmutable">Constants / Immutable</a></li>
+<li><a href="#section_casting">Casting</a></li>
+<li><a href="#section_functionsmethods">Functions and Methods</a></li>
+<li>Scope</li>
+<li>Structures</li>
+<li>Classes</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Interfaces</li>
+<li><a href="#section_generics">Generics/Templates</a></li>
+<li>Reflection</li>
+</ul>
+
+<h2 id="section_datatypes">Data Types</h2>
+<p>A data type is a specification of what a piece in memory should be. Just about every programming language has built-in data types. Data types include: int, char, short, long, float, double, etc.  Built-in data types vary by language, and in many languages you can define your own data type. In managed/interpreted languages (C#, and Java) the sizes are fixed, and in other cases the size of the data type can vary depending on the system (this happens in C, and C++). Generally the size of a data type is measured in bytes, and the number of bytes allows a certain amount of representation of symbols. For example, a one byte char allows up to 2 to the 8th power = 256 possibilities.  In the case of a 4 byte int then the number of representations are 2 to the (4 times 8) =  4,294,967,296 (about 4 billion numbers).</p>
+
+<h2 id="section_variables">Variables</h2>
+<p>Variables are a memory location that holds the value of, or a reference to, something. The variable declaration requires the data type name followed by some identifier.</p>
+
+<p>In many C-like languages you will see declarations like this:</p>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> number;</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">char</span> character;</div>
+<br /><div>
+    number <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">5</span>;</div>
+<div>
+    character <span style="color: #ff005e;">=</span> <span style="color: #ffff63;">'c'</span>;</div>
+<br /><div>
+    <span style="color: #41ffff; font-style: italic;">bool</span> done <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">true</span>;</div>
+<div>
+}</div>
+</div></div>
+<p>The identifiers here are number, character, and done. The data types are int, char, and bool. The "number = 5" is an assignment. Note that one can assign a value when a variable declaration takes place, such as in the case of the done variable.</p>
+
+<p>Some programming languages are very flexible in the declaration of variables. Languages like Javascript, ML, and BlitzMax allow the use of variable declarations and the compiler determines the data type. This can be both good and bad -- good because we can save some time when writing code, but bad because some tools (IDEs) may have a hard time determining what data type something is and also improves readability for the programmer. The Blitzmax language allows manual setting, via some keywords, of how flexible a declaration should be. Below is some code in which we can see this when declaring a myVariable integer.</p>
+<div class="codebox"><div style="background-color:#336699"><div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' BlitzMax variable declaration</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' Non-strict</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+myVariable = <span style="color: #40ffff;">1</span></div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: yellow; font-family: Monaco; font-size: 12px; line-height: normal;">
+Strict</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+<span style="color: yellow;">Local</span> myVariable = <span style="color: #40ffff;">2</span></div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: yellow; font-family: Monaco; font-size: 12px; line-height: normal;">
+SuperStrict</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+<span style="color: yellow;">Local</span> myVariable:<span style="color: yellow;">Int</span> = <span style="color: #40ffff;">3</span></div>
+<br />
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+<span style="color: yellow;">Local</span> myVariable% = <span style="color: #40ffff;">4</span></div></div></div>
+<p>As pesky as it may seem, the SuperStrict mode is the better one when programming larger programs.</p>
+
+<h2 id="section_constantsimmutable">Constants</h2>
+<p>Constants are almost variables. The difference is in that once the value is set the compiler may not allow any change.</p>
+
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height:4px; white-space: pre;">
+<div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    <span style="color: #ff005e;">const</span> <span style="color: #41ffff; font-style: italic;">int</span> x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">5</span>;</div>
+<div>
+    x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">3</span>; <span style="color: #c2b889;">// error can't change it!</span></div>
+<div>
+}</div>
+</div>
+</div>
+
+<p>Constants in certain scopes are not a problem. But they tend to be a bit problematic when dealing with clases. In C++ one may have to use an initializer list in order to set the constant. Some example code below in which x is set to 2.</p>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C++</span></div>
+<div>
+<span style="color: #41ffff; font-style: italic;">class</span> Foo {</div>
+<div>
+    <span style="color: #ff005e;">const</span> <span style="color: #41ffff; font-style: italic;">int</span> x;</div>
+<div>
+    <span style="color: #dcff00; font-weight: bold;">Foo</span>() : <span style="color: #dcff00; font-weight: bold;">x</span>(<span style="color: #f082ff;">2</span>) {</div>
+<div>
+    }</div>
+<div>
+}</div>
+</div></div>
+
+<p>In Java there is the concept of a "<b>blank final</b>" which is a variable whose initialization has not ocurred, but when it does the variable becomes immutable (it cannot be changed during execution of the program).</p>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #ff005e;">class</span> Foo {</div>
+<div>
+    <span style="color: #ff005e;">public</span> <span style="color: #ff005e;">final</span> <span style="color: #41ffff; font-style: italic;">int</span> x;</div>
+<div>
+    </div>
+<div>
+    <span style="color: #ff005e;">public</span> <span style="color: #dcff00; font-weight: bold;">Foo</span>() {</div>
+<div>
+        x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">2</span>;</div>
+<div>
+        x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">3</span>; <span style="color: #c2b889;">// error</span></div>
+<div>
+    }</div>
+<div>
+}</div>
+</div>
+</div>
+
+<h2 id="section_casting">Casting</h2>
+<p>Down to the bits a piece of memory is a piece of memory. So casting essentially says to treat a portion of the memory at the given address as if it was something that the programmer specifies. In the example below we can see that the assignment of char c says get the value of x and cast it as if it was a char. The result is printing out the letter "a".</p>
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C++</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;iostream&gt;</span></div>
+<div>
+<span style="color: #ff005e;">using</span> <span style="color: #41ffff; font-style: italic;">namespace</span> std;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">97</span>;</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">char</span> c <span style="color: #ff005e;">=</span> (<span style="color: #41ffff; font-style: italic;">char</span>)x;</div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> c;</div>
+<div>
+}</div>
+</div>
+</div>
+
+<p>An example where casting is very useful is in the case of memory locations. Here's a C++ example.</p>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C++</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;iostream&gt;</span></div>
+<div>
+<span style="color: #ff005e;">using</span> <span style="color: #41ffff; font-style: italic;">namespace</span> std;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">char</span> memory[<span style="color: #f082ff;">5</span>]; <span style="color: #c2b889;">// a block of memory of 5 bytes</span></div>
+<br /><div>
+    <span style="color: #41ffff; font-style: italic;">int</span><span style="color: #ff005e;">*</span> intPtr <span style="color: #ff005e;">=</span> <span style="color: #ff005e;">reinterpret_cast&lt;</span><span style="color: #41ffff; font-style: italic;">int</span><span style="color: #ff005e;">*&gt;</span>(memory <span style="color: #ff005e;">+</span> <span style="color: #f082ff;">0</span>); <span style="color: #c2b889;">// Store the base address into an integer pointer</span></div>
+<div>
+    <span style="color: #ff005e;">*</span>intPtr <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">33</span>;   <span style="color: #c2b889;">// Place the value of 33 into the address specified (taking 4 bytes due to int data type)</span></div>
+<br /><div>
+    <span style="color: #c2b889;">// Treat the 5th byte as a character and assign it the value of 'a'</span></div>
+<div>
+    <span style="color: #ff005e;">*reinterpret_cast&lt;</span><span style="color: #41ffff; font-style: italic;">char</span><span style="color: #ff005e;">*&gt;</span>(memory <span style="color: #ff005e;">+</span> <span style="color: #f082ff;">5</span>) <span style="color: #ff005e;">=</span> <span style="color: #ffff63;">'a'</span>;</div>
+<br /><div>
+    <span style="color: #c2b889;">// Read what is at those memory addresses, and print them out.</span></div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ff005e;">*reinterpret_cast&lt;</span><span style="color: #41ffff; font-style: italic;">int</span><span style="color: #ff005e;">*&gt;</span>(memory) <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">'</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">'</span>; <span style="color: #c2b889;">// 33</span></div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ff005e;">*reinterpret_cast&lt;</span><span style="color: #41ffff; font-style: italic;">char</span><span style="color: #ff005e;">*&gt;</span>(memory <span style="color: #ff005e;">+</span> <span style="color: #f082ff;">5</span>) <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">'</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">'</span>; <span style="color: #c2b889;">// a</span></div>
+<br /><div>
+    <span style="color: #ff005e;">return</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+}</div>
+</div>
+</div>
+<p>Casting can also be applied to objects. There are terms like <b>upcasting</b> and <b>downcasting</b>. The upcasting goes from a specific type to a more base type. The downcasting goes from a base type to a specific type. Downcasting is very prone to error because data can be missing. Here's an example in D.</p>
+
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// D</span></div>
+<div>
+<span style="color: #ff005e;">import</span> <span style="color: #41ffff; font-style: italic;">std.stdio</span>;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">class</span> Shape {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> x, y;</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">which</span>() { writeln(<span style="color: #ffff63;">"shape"</span>); }</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">class</span> Circle : <span style="color: #dcff00; font-style: italic; text-decoration: underline;">Shape</span> {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> radius;</div>
+<div>
+    <span style="color: #ff005e;">override </span><span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">which</span>() { writeln(<span style="color: #ffff63;">"circle"</span>); }</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    Circle myCircle = <span style="color: #ff005e;">new</span> Circle();</div>
+<div>
+    myCircle.which; <span style="color: #c2b889;">// prints circle (correct)</span></div>
+<div>
+    Shape myShape = <span style="color: #ff005e;">cast</span>(Shape) myCircle;   <span style="color: #c2b889;">// upcast (Circle to Shape)</span></div>
+<div>
+    myShape.which; <span style="color: #c2b889;">// prints circle (correct)</span></div>
+<br /><div><br /><br />
+    Shape myShape2 = <span style="color: #ff005e;">new</span> Shape();</div>
+<div>
+    myShape2.which;  <span style="color: #c2b889;">// prints shape (correct)</span></div>
+<div>
+    Circle castedCircle = <span style="color: #ff005e;">cast</span>(Circle) myShape2; <span style="color: #c2b889;">// downcast (Shape to Circle)</span></div>
+<div>
+    </div>
+<div>
+    writeln(castedCircle.radius); <span style="color: #c2b889;">// Problem!</span></div>
+<div>
+    <span style="color: #c2b889;">// The .radius is not in the Shape object, so it doesn't get passed to</span></div>
+<div>
+    <span style="color: #c2b889;">// the castedCircle object, we would have similar problem with</span></div>
+<div>
+    <span style="color: #c2b889;">// the which method call.</span></div>
+<div>
+    <span style="color: #c2b889;">//castedCircle.which; // segmentation fault</span></div>
+<div>
+}</div>
+</div></div>
+
+<h2 id="section_functionsmethods">Functions and Methods</h2>
+<p>Functions are a block of instructions. Methods are also like functions, except they include an "identifier" for the object to be worked on -- the identifier is commonly referred to as the "<b>this</b>" pointer.  The <a href="../memory/index.html">Memory</a> section covers what tends to be under the hood of a function. Without function calls a program would be one big long piece of code with goto statements all over the place. Functions help us keep code tidy.</p>
+
+<p>A simple function:</p>
+<div class="codebox"><div style="background-color: #336699;">
+<div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' BlitzMax</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' Function declaration</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+<span style="color: yellow;">Function</span> SayHello()</div>
+<div style="color: #00ff66; font-family: Monaco; font-size: 12px; line-height: normal;">
+<span style="color: white;">&nbsp; </span><span style="color: yellow;">Print</span><span style="color: white;"> </span>"Hello, World"</div>
+<div style="color: yellow; font-family: Monaco; font-size: 12px; line-height: normal;">
+EndFunction</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' Invoking/calling a function</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal;">
+SayHello();</div>
+<div style="color: white; font-family: Monaco; font-size: 12px; line-height: normal; min-height: 16px;">
+<br /></div>
+<div style="color: #bbeeff; font-family: Monaco; font-size: 12px; line-height: normal;">
+' End program</div>
+<div style="color: yellow; font-family: Monaco; font-size: 12px; line-height: normal;">
+End<span style="color: white;">&nbsp;</span></div>
+</div>
+</div>
+
+<p>Passing by <b>value</b> and by <b>reference</b> are the most common ways to place data into a function. The value approach makes a copy of the value of the specified variable. Passing by reference can change the value of what was passed. Here's a C example.</p>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;stdio.h&gt;</span> <span style="color: #c2b889;">// printf</span></div>
+<br /><div>
+<span style="color: #c2b889;">// Function requiring a pass by value</span></div>
+<div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">doSum</span>(<span style="color: #41ffff; font-style: italic;">int</span> x, <span style="color: #41ffff; font-style: italic;">int</span> y) {</div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><br /><br /><div>
+<span style="color: #c2b889;">// Function requiring a int pointer</span></div>
+<div>
+<span style="color: #c2b889;">// (pass by reference essentially)</span></div>
+<div>
+<span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">adjust</span>(<span style="color: #41ffff; font-style: italic;">int</span><span style="color: #ff005e;">*</span> x) { </div>
+<div>
+    <span style="color: #ff005e;">*</span>x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">4</span>;</div>
+<div>
+}</div>
+<br /><br /><br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> one <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">1</span>;</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> two <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">2</span>;</div>
+<br /><div>
+    <span style="color: #41ffff; font-style: italic;">int</span> sum <span style="color: #ff005e;">=</span> <span style="color: #dcff00; font-weight: bold;">doSum</span>(one, two);  <span style="color: #c2b889;">// Pass one and two by value</span></div>
+<div>
+    <span style="color: #41ffff;">printf</span>(<span style="color: #ffff63;">"</span><span style="color: #f082ff;">%d\n</span><span style="color: #ffff63;">"</span>, one);    <span style="color: #c2b889;">// 1</span></div>
+<div>
+    <span style="color: #41ffff;">printf</span>(<span style="color: #ffff63;">"</span><span style="color: #f082ff;">%d\n</span><span style="color: #ffff63;">"</span>, twp);    <span style="color: #c2b889;">// 2</span></div>
+<div>
+    <span style="color: #41ffff;">printf</span>(<span style="color: #ffff63;">"</span><span style="color: #f082ff;">%d\n</span><span style="color: #ffff63;">"</span>, sum);    <span style="color: #c2b889;">// 3</span></div>
+<br /><div>
+    <span style="color: #41ffff; font-style: italic;">int</span><span style="color: #ff005e;">*</span> aPtr <span style="color: #ff005e;">=</span> <span style="color: #ff005e;">&amp;</span>sum;       <span style="color: #c2b889;">// Make aPtr point to the address of sum</span></div>
+<div>
+    <span style="color: #dcff00; font-weight: bold;">adjust</span>(aPtr);           <span style="color: #c2b889;">// Pass the pointer to the function</span></div>
+<div>
+    <span style="color: #41ffff;">printf</span>(<span style="color: #ffff63;">"</span><span style="color: #f082ff;">%d\n</span><span style="color: #ffff63;">"</span>, sum);    <span style="color: #c2b889;">// 4</span></div>
+<br /><div>
+    <span style="color: #ff005e;">return</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+}</div>
+</div>
+</div>
+
+<p>Functions can return something or nothing. What is returned is determined in the function declaration. Generally a function that returns nothing is said to have a "<b>void</b>" return type.</p>
+
+<p>In the good old C days every function had to have a unique name. An example of this are all the print functions (fprinf, printf, sprintf, vfprintf, vprintf, vsprintf, etc.). Eventually things changed, and now we have what they call "<b>function overloading</b>". What this means is that the function can have the same identifier name, but what is passed inside and the return type determine a signature. This gives us a lot of flexibility. Below is some code in which we have a function that performs a sum of ints or a sum of doubles.</p>
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// D</span></div>
+<div>
+<span style="color: #ff005e;">import</span> <span style="color: #41ffff; font-style: italic;">std.stdio</span>;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">getSum</span>(<span style="color: #41ffff; font-style: italic;">int</span> x, <span style="color: #41ffff; font-style: italic;">int</span> y) {</div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">double</span> <span style="color: #dcff00; font-weight: bold;">getSum</span>(<span style="color: #41ffff; font-style: italic;">double</span> x, <span style="color: #41ffff; font-style: italic;">double</span> y) {</div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    getSum(<span style="color: #f082ff;">1</span>, <span style="color: #f082ff;">2</span>).writeln; <span style="color: #c2b889;">// 3</span></div>
+<div>
+    getSum(<span style="color: #f082ff;">1.0</span>, <span style="color: #f082ff;">2.5</span>).writeln; <span style="color: #c2b889;">// 3.5</span></div>
+<div>
+}</div>
+</div>
+</div>
+<p>The better approach is to eventually use <b>generics</b>. Which we'll cover later.</p>
+
+
+
+<h2 id="section_generics">Generics/Template</h2>
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// D</span></div>
+<div>
+<span style="color: #ff005e;">import</span> <span style="color: #41ffff; font-style: italic;">std.stdio</span>;</div>
+<br /><div>
+<span style="color: #ff005e;">auto</span> <span style="color: #dcff00; font-weight: bold;">getSum</span>(T)(T x, T y) {</div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    getSum(<span style="color: #f082ff;">1</span>, <span style="color: #f082ff;">2</span>).writeln; <span style="color: #c2b889;">// 3</span></div>
+<div>
+    getSum(<span style="color: #f082ff;">1.0</span>, <span style="color: #f082ff;">2.5</span>).writeln; <span style="color: #c2b889;">// 3.5</span></div>
+<div>
+}</div>
+</div>
+</div>
+<p>C++ example of the generic equivalent</p>
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C++</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;iostream&gt;</span></div>
+<div>
+<span style="color: #ff005e;">using</span> <span style="color: #41ffff; font-style: italic;">namespace</span> std;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">template</span><span style="color: #ff005e;">&lt;typename</span> T<span style="color: #ff005e;">&gt;</span></div>
+<div>
+T <span style="color: #dcff00; font-weight: bold;">doSum</span>(T x, T y) {</div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #dcff00; font-weight: bold;">doSum</span>(<span style="color: #f082ff;">1</span>, <span style="color: #f082ff;">2</span>) <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">"</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">"</span>;</div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #dcff00; font-weight: bold;">doSum</span>(<span style="color: #f082ff;">1.0</span>, <span style="color: #f082ff;">2.5</span>) <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">"</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">"</span>;</div>
+<div>
+}</div>
+</div>
+</div>
+
+<p>(WORK IN PROGRESS)</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

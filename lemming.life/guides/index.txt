@@ -1,0 +1,10 @@
+title:::Guides
+listNextPages:::true
+listPreviousPages:::false
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Guides</h1>
+<p>Over time I will add more guides.</p>
+<div id="nextPagesContainer"></div>
+</div>

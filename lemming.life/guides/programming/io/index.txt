@@ -1,0 +1,21 @@
+title:::Input and Output
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Input and Output</h1>
+
+<h2>Index</h2>
+<ul>
+<li>Standard Output</li>
+<li>Standard Input</li>
+<li>Reading from File</li>
+<li>Writing to File</li>
+<li>Databases</li>
+</ul>
+
+<p>(WORK IN PROGRESS)</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

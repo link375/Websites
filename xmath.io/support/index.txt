@@ -1,0 +1,86 @@
+title:::Support <<<settings.title>>>
+listNextPages:::
+listPreviousPages:::
+cssjs:::<style>div.infoSquare { display:inline-block; width:auto; padding:5px; border: 1px solid grey; background-color: #ffffff }</style>
+firstContent:::
+content:::<h1><<<title>>></h1>
+<div class="sheet">
+<p><<<settings.title>>> is a free website. There are no advertisements displayed and there is no membership fee. Your contributions are critical. </p>
+
+<p>Funding for <<<settings.title>>> will run out in <b>2019</b>. If <<<settings.title>>> cannot make it on its own then the contents will be hosted at <a href="<<<settings.backupUrl>>>"><<<settings.backupUrl>>></a></p>
+
+<div class="infoSquare">
+<h2>2019: Not Funded</h2>
+<p>Expenses: $66 (expected)</p>
+<p>Donations: $0.00</p>
+</div>
+
+<div class="infoSquare">
+<h2>2018: Funded</h2>
+<p>Expenses: $0.00</p>
+<p>Donations: $0.00</p>
+</div>
+
+<div class="infoSquare">
+<h2>2017: Funded</h2>
+<p>Expenses: $131.32</p>
+<p>Seed: $131.32</p>
+</div>
+
+<br /><br />
+<h2>Digital Currencies</h2>
+<ul>
+<li>Ardor: NXT-EMTU-Y2C3-97FY-24JTL</li>
+<li>Augur: 0x1de4c33d23e9061843df9398306a1db76a4ba503</li>
+<li>Belacoin: B9dUb9MgzJvqM1vCpMPpZ8ZnXASDPX4phS</li>
+<li>Bitcoin: 1LWhiyRAhEFDHyfPgR5r13gQnTJP6NVycE</li>
+<li>Bitcoin Dark: RJgHVknEohcjiKpg1HEWqMGL8aCbw6YSH6</li>
+<li>Bitcoin Plus: BJqCnuZcmPHmDz3wXBkLEoZjtuUGAkF9jE</li>
+<li>BitCrystals: 1B5UdWz6MnYuT9YrC4iw6ZnGM1PgbS75DJ</li>
+<li>BlackCoin: BRUL8QZWjBLTURXQRVNswyxbTj3Vgn9e7T</li>
+<li>Burst: BURST-JJGV-AXYY-FMUM-2ZNSU</li>
+<li>CLAMS: xExQwGn9xJdKSPD2boaYKMGiuwrYvbXPcw</li>
+<li>Counterparty: 1CgHfENRtYJAPtNgcBxRuKk2Y1Rkg8UgZJ</li>
+<li>Dash: XyfG9rMStgmABmMRRNtpwsmYFehBtxMveS</li>
+<li>Decred: DP3n6FKA5dZ3AZuxz4K1pfGGqtBQ6pt7dj</li>
+<li>DNotes: DnyJzQm2tYNpV2UXkPbYUZkWexoVg7GkoP</li>
+<li>Dogecoin: DHn6vnZX5NkUp55VS2NkmjtUd2Ycv65jTD</li>
+<li>Einsteinium: Efkev9TrxoGcxZsky1Hyy2aVQ4bYxuteeW</li>
+<li>Ethereum: 0xb97fbae9109c15adda776a5c5294fbaf6a6d6e3f</li>
+<li>Expanse: 0x40d328b706ac911387f07afe4ed183626b4527df</li>
+<li>FoldingCoin: 1KbkDt4QYpzc6c6kZZcVgJcQfZuszWaYni</li>
+<li>Florincoin: FL1bkgNWo7Z5tRYZEggp1yGkffVC8GffF1</li>
+<li>GameCredits: GebA3vfXZnBMeDduALgpegqvcWo66PMKUU</li>
+<li>Gnosis: 0x28b9c53d70a038edf3f2df6ee8b708e67516075a</li>
+<li>Golem: 0xc5134aa5bf7f1690de903896e02320fd3e01eaa4</li>
+<li>Gridcoin Research: SHhvT6nBpUt45JoXGiBzA32kXKzXTYaHm6</li>
+<li>Huntercoin: HTtmwMP5sJLbh4zLizy3Zkx7V5d7PfawsM</li>
+<li>LBRY Credits: bJgdV6oqWCsDjRiV6HdQCAkiEEpH5FMqPV</li>
+<li>Lisk: 10452439553829763554L</li>
+<li>Litecoin: Lez3tW4L1T3QwKUPSpkwzJaAKXLyY2GefX</li>
+<li>MaidSafeCoin: 1G5Qe8nPUzVuSkk2g7U6w49mdkumzv1kWp</li>
+<li>Monero: 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS4T94zwhAATJCDLfVg</li>
+<li>Nautiluscoin: NXT-3YZN-BRZ2-YTQ5-9HPNB</li>
+<li>NAVCoin: NLJaWKMdwcf1MUETDhwKjsyfHcMYKxDE1x</li>
+<li>Neoscoin: NNVd1juDkBruXaQEVMaSEN1myYQbRmpZ5V</li>
+<li>Namecoin: N6htNJpvr6cfMcjMHsRkLGgWkfWh6QGpjs</li>
+<li>Nem: 6db8f576ac6daab6</li>
+<li>Nexium: 0xa919425de6876d69df3d3634e6fdcca8ddaa8bff</li>
+<li>NXT: NXT-WMGP-TVUV-F56D-4VKVK</li>
+<li>Omni: 1Brm1gbcJt4L8S3npz3uNPEkxmACrUp8am</li>
+<li>Peercoin: PMNTiCtofmUDt89iyUKfFbmbs8H63amCTL</li>
+<li>Pinkcoin: 2beCzpdb7CSbuw5y64oYditzfCNxLSKDBk</li>
+<li>PotCoin: PD4z3pnMMHAGMxcMyWEyW2XiVWK1m4Yxpt</li>
+<li>Primecoin: ALx1AjFPtJNovnL5vdsrQD69MTBRqQiYbD</li>
+<li>Radium: XgXD4xJCWEwrUpo5yJUDUE6RQiYxZcJs2T</li>
+<li>Siacoin: a5b8872364d13aa622c02f317302d84f6a7e93622eaa837847b74ae28e2ff43180483b7e5630</li>
+<li>Stratis: Scgsua6Diu9AXYYVQBeuzXps7rfJYCykie</li>
+<li>Syscoin: ScVgM5VZxMJzy9vBwAQi82ZrABv8xGddYr</li>
+<li>Synero AMP: 1GYB4B8J67igNdcQ8uVTyn3LaoeeVUi4JH</li>
+<li>Tether USD: 1HaMRoqNDRrkWgdU8Tw6QLpv2aAZFqxns9</li>
+<li>VeriCoin: VPgdbpSC8cjhb5WKDZNBxNEQboJzo1aKuN</li>
+<li>Vertcoin: VwFSNyw7k5FFTXYxDVeqqAyiu9RcN6qSip</li>
+<li>Viacoin: VmokG9CiyamEAGGHTnx2HyvAVdtd7xPasU</li>
+<li>Zcash: t1f4dCKfyq8nxExcD1P4kD4TTtggm6qvy4G</li>
+</ul>
+</div>

@@ -1,0 +1,22 @@
+title:::Patterns
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Patterns</h1>
+<p>In software development a software pattern is a reusable structure of code. Depending on the context one has to modify the structure to fulfill all the needs required, but the structure remains. Each pattern does have strengths and weaknesses, so their use may not be always appropriate. If one is to debate on whether to maintain a principle or a pattern then it is better to strive for abiding by principles. Many of the notable patterns tend to be used in object oriented languages, so one must be aware of classes, objects, inheritance, and polymorphism.</p>
+
+<h2>Various Patterns</h2>
+<ul>
+<li>Strategy Pattern</li>
+<li>Adapters</li>
+<li>Decorator</li>
+<li>Singleton</li>
+<li>Observer</li>
+</ul>
+
+<p>(WORK IN PROGRESS)</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

@@ -1,0 +1,11 @@
+title:::Projects
+listNextPages:::true
+listPreviousPages:::false
+cssjs:::
+firstContent:::
+content:::
+<div class="standardBoxing">
+<h1>Programming</h1>
+<p>More projects to come. For now we have PathFinder and DRY Site Builder.</p>
+<div id="nextPagesContainer"> </div>
+</div>

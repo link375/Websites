@@ -1,0 +1,20 @@
+title:::Algorithms
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Algorithms</h1>
+
+<h2>Index</h2>
+<ul>
+<li>Iterative vs Recursive</li>
+<li>Bubble Sort</li>
+<li>Merge Sort</li>
+<li>Binary Search</li>
+</ul>
+
+<p>(WORK IN PROGRESS)</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

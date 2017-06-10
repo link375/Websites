@@ -1,0 +1,147 @@
+title:::DRY Site Builder
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>DRY Site Builder</h1>
+<h4>Download</h4>
+<p><a href="https://github.com/lemming-life/drysitebuilder" target="_blank">https://github.com/lemming-life/drysitebuilder</a><p>
+
+<h2>Info</h2>
+<p>The purpose of DRY Site Builder is to save time by automating repetitive html writing operations when creating a static website.  Imagine doing a static website and retyping the navigation bar on every page of the entire website... pretty dumb to have to do that. The DRY stands for "Dont Repeat Yourself".</p>
+
+<p>Note: DRY Site Builder is not the easiest website builder to use. If you are a beginner in coding html, css, and javascript then I would strongly not encourage you to use it.</p>
+
+<p>At the moment DRY has been tested with Mac OS X Sierra, but it should run in Windows and Linux when recompiled. Two programming languages were involved in the creation of the program, the first is BlitzMax, and the second is Dlang.</p>
+
+<p>BlitzMax was utilized for the "Editor" of the program. BlitzMax offers wonderful GUI support that is cross platform and compiles natively. DLang also compiles to native code and was used for the "Generator" for its speed and cross platform capabilities.</p>
+
+<p>The Editor is a GUI application that facilitates the creation of pages, folders, and text files. The editor also establishes paths to use for importing and exporting files and folders, and can call on the Generator to be ran. The Generator is in charge of taking those folders, files, generating html files, and copying/pasting resources in the import folder. The exported files and folders can then be placed on an FTP.  This website, lemming.life, is using DRY Site Builder.</p>
+
+
+<h2>Readme.txt</h2>
+<pre class="text">
+Project: DRY Site Builder<br />
+Author: lemming-life<br />
+Updated: June 8, 2017<br />
+Info: http://lemming.life/projects/drysitebuilder/<br />
+License: zlib/libpng License<br />
+Purpose: Create a static website from folders and txt files.<br />
+<br />
+To compile generator:<br />
+- Install D, http://dlang.org<br />
+- In console type: rdmd --buil-only generator.d<br />
+<br />
+To compile editor:<br />
+- Install BlitzMax, http://www.blitzbasic.com<br />
+- Open BlitzMax, open DrySiteBuilder.bmx<br />
+- Ensure "Build GUI App" is enabled, use menu "Program &gt; Build Options &gt; Build GUI App"<br />
+- Build it by using menu "Program &gt; Build"<br />
+<br />
+Creating a website:<br />
+- Create the path of the website.<br />
+- Create import and export folders.<br />
+- Open the Dry Site Builder<br />
+- Establish import path, use menu "Paths &gt; Import"<br />
+- Establish export path, use menu "Paths &gt; Export"<br />
+- Create an index.txt file, use menu "File &gt; New"<br />
+&nbsp; -- Edit index.txt as needed.<br />
+&nbsp; -- Click on index.txt, modify on the text area, and save via menu "Text Edit &gt; Save"<br />
+- Create settings.txt, use menu "File &gt; Create Settings" or click on the "Settings" button.<br />
+- Create Folders as needed.<br />
+- Create Page as needed. &nbsp;A Page is a folder that will contain an index.txt<br />
+<br />
+Building a website:<br />
+- Click on menu "Site &gt; Generate".<br />
+<br />
+View website:<br />
+- (Note that this is a basic browser, use a better one for viewing the exported website)<br />
+- Use menu "Site &gt; View"<br />
+<br />
+Notes on settings.txt<br />
+- title&#58;&#58;&#58;[the title of the website]<br />
+- url&#58;&#58;&#58;[url of website (no trailing /). For local testing put the path of the export folder path.]<br />
+- cssjs&#58;&#58;&#58;[valid html for css or js that goes between the header html tags]<br />
+- html&#58;&#58;&#58;[anything to insert into the html tag, such for example &lt;html ng-app=""&gt; for an angular app]<br />
+- header&#58;&#58;&#58;[any valid html code that will be placed right after the &lt;body&gt; tag. This will repeat in all pages.]<br />
+- footer&#58;&#58;&#58;[any valid html code that will be placed right before the &lt;/body&gt; tag. This will repeat in all pages.]<br />
+<br />
+Notes on index.txt<br />
+- title&#58;&#58;&#58;[the title of the page]<br />
+- listNextPages&#58;&#58;&#58;[false or true to insert html with a list of pages]<br />
+- listPreviousPages&#58;&#58;&#58;[false or true to insert html with a list of pages]<br />
+- cssjs&#58;&#58;&#58;[valid html for css or js that goes between the header html tags that goes after the site_header.txt cssjs]<br />
+- firstContent&#58;&#58;&#58;[code that will be placed before the &lt;body&gt; and before the settings.header code]<br />
+- content&#58;&#58;&#58;[any valid html code]<br />
+<br />
+Notes on order.txt<br />
+- Use the "Up" and "Down" buttons to move where a page will appear.<br />
+- This is used in combination with index.txt listNextPages&#58;&#58;&#58;true and listPreviousPages&#58;&#58;&#58;true properties.<br />
+<br />
+Editor notes:<br />
+- Drag and drop of files and folders is allowed. Positioning depends on the node selected on the tree view.<br />
+- Delete operations do remove the file, there is no prompt to confirm for files, but there is prompt to confirm for directories.<br />
+- Use of shortcuts is highly encouraged.<br />
+- The text editing is limited, and by default it supports "txt", "html", "htm", "js", "css"<br />
+&nbsp; -- You can add an "extensions.txt" file and type the additional file types you desire (one per line).<br />
+- At the moment there is no undo on the text area... so save when you are certain, and if you made a mistake then do the menu "Text Edit &gt; Load"<br />
+<br />
+Notes on dynamic properties:<br />
+- You can add your own properties to the index.txt and settings.txt files. For example:<br />
+&nbsp; someUrl&#58;&#58;&#58;http://lemming.life<br />
+- To use the dynamic property in the same file:<br />
+&nbsp; &lt;&lt;&lt;someUrl&gt;&gt;&gt;<br />
+- If use a dynamic property from the settings.txt file in index.txt:<br />
+&nbsp; &lt;a href="&lt;&lt;&lt;settings.someUrl&gt;&gt;&gt;" &gt; &lt;&lt;&lt;settings.title&gt;&gt;&gt; &lt;/a&gt;<br />
+- Dynamic properties can be used to reduce the amount of repetition. You can even do this in index.txt<br />
+&nbsp; title&#58;&#58;&#58;&lt;&lt;&lt;settings.someUrl&gt;&gt;&gt; Support<br />
+&nbsp; content&#58;&#58;&#58; Thanks for visiting the &lt;&lt;&lt;title&gt;&gt;&gt; page.<br />
+- After generating the website you should see something like the following in the index.html:<br />
+&nbsp; ... &lt;body&gt;Thanks for visiting the http://lemming.life/ Support page.&lt;/body&gt; ...
+</pre>
+
+<h2>Example settings.txt</h2>
+<p>Ensure that you switch the url&#58;&#58;&#58; property to be &lt;&lt;&lt;releaseUrl&gt;&gt;&gt;</p>
+<pre class="codebox">
+title&#58;&#58;&#58;Lemming Life<br />
+debugUrl&#58;&#58;&#58;file:///op/websites/_export/lemming.life<br />
+releaseUrl&#58;&#58;&#58;http://lemming.life<br />
+url&#58;&#58;&#58;&lt;&lt;&lt;debugUrl&gt;&gt;&gt;<br />
+html&#58;&#58;&#58;<br />
+cssjs&#58;&#58;&#58;<br />
+&lt;meta charset="UTF-8"&gt;<br />
+&lt;link rel="stylesheet" type="text/css" href="&lt;&lt;&lt;url&gt;&gt;&gt;/cssjs/style.css"&gt;<br />
+&lt;script src="&lt;&lt;&lt;url&gt;&gt;&gt;/cssjs/script.js"&gt;&lt;/script&gt;<br />
+<br />
+header&#58;&#58;&#58;<br />
+&lt;div id="navContainer"&gt;<br />
+&nbsp; &lt;ul class="nav"&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;img src="&lt;&lt;&lt;url&gt;&gt;&gt;/images/lemming-life.png" id="logo" /&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="&lt;&lt;&lt;url&gt;&gt;&gt;/index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="&lt;&lt;&lt;url&gt;&gt;&gt;/projects/index.html"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="&lt;&lt;&lt;url&gt;&gt;&gt;/guides/index.html"&gt;Guides&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="&lt;&lt;&lt;url&gt;&gt;&gt;/websites/index.html"&gt;Websites&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="https://github.com/lemming-life/" target="_blank"&gt;Github&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li&gt;&lt;a href="&lt;&lt;&lt;url&gt;&gt;&gt;/support/index.html"&gt;Support&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &nbsp; &lt;li class="right"&gt;&lt;a id="liame" href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;<br />
+&nbsp; &lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+<br />
+footer&#58;&#58;&#58;&lt;div class="footer"&gt;<br />
+&nbsp; &lt;div class="middle"&gt;&amp;copy;&lt;span id="currentYear"&gt;&lt;/span&gt; &lt;&lt;&lt;title&gt;&gt;&gt;&lt;/div&gt;<br />
+&lt;/div&gt;
+</pre>
+
+
+
+<h2>Repositioning nextPages and previousPages</h2>
+<p>The nextPages and previousPages are ids. On the page cssjs property you can, via javascript. call an append to wherever you want.  Note that nextPagesContainer in the example below is a div element somewhere inside the "content&#58;&#58;&#58;" property.</p>
+<pre class="codebox">cssjs:&lt;script&gt; &nbsp;function movePages() {<br />
+&nbsp; document.getElementById("nextPagesContainer").appendChild(document.getElementById("nextPages"));<br />
+&nbsp; }<br />
+&nbsp; window.onload = movePages;<br />
+&lt;/script&gt;</pre>
+
+<div id="previousPagesContainer"><h3>Other Projects</h3></div>
+</div>

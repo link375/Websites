@@ -1,0 +1,9 @@
+introduction
+memory
+concepts
+practices
+datastructures
+principles
+patterns
+algorithms
+io

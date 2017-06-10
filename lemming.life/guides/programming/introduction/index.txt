@@ -1,0 +1,96 @@
+title:::Introduction
+listNextPages:::false
+listPreviousPages:::true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Introduction</h1>
+<p>Many computer scientists consider the computer to be a very dumb box -- by itself the computer is not intelligent. The computer needs to be told what to do, and this must be done in a very specific way. If it's not specific the computer won't know what to do or will do things that we don't want. It is the job of software writers to ensure that a computer can do work in a proper way.</p>
+
+<h2>Computer Languages</h2>
+<p>Computers work with "switches" of present voltage and low voltage. Usually a <b>bit</b> is said to be either a zero (low voltage) or a one (high voltage). Generally a single bit does not have much information that we care about. It is simply two possible states, like the two sides of a coin. If we have two bits we can represent much more information (2 to 2nd power = 4 possible states).  Using more bits gives us more representations. For quite some time we have used 8 bits, also known as a <b>byte</b>, to represent <b>ASCII</b> symbols. These symbols are characters in the English alphabet, numbers, and some symbols that only computers can understand. How much can we represent with a byte?  Well, 2 to the 8th power gives us 256 possibilities. That many possibilities is good, but in a culture rich world with many traditional symbols there is need for more bits -- so using <b>Unicode</b> gives us a larger set of symbols to work with.</p>
+
+<p>In the near future it is possible to be able to verbally tell the computer to do something and it will do it. These are great advancements in speech recognition. However, at the moment in order to achieve complex operations we must tell the computer what to do, and do so in a way that it can understand.  Computers understand a <b>low-level</b> machine code language, which is an arrangment of zeros and ones.  As crude as it may be computers cope well with these collections, sadly for us we humans find reading zeros and ones to be very tedious. We humans are used to natural languages. so it makes sense that we prefer programming languages that are more human-readable -- we often say that such langauges are <b>higher-level</b>.</p>
+
+<p>There are simply too many computer languages available to use.  You probably have heard of C, C# (said C Sharp), C++ (said as C plus plus), Java, JavaScript, Basic, Go, etc.  Each one has its strengths and weaknesses and for the most part it is impossible to say that there is a single "best" language. There are however, some important aspects to consider.</p>
+
+<p><b>Native code</b> languages run directly on the CPU and are found to be very fast. Some native code languages include C, C++, and D. <b>Interpreted</b> languages are translated into bytecode and are ran by a virtual machine. The virtual machine then performs the work on the CPU. Some interpreted languages include C# and Java. Interpreted languages are often slower, but can be very portable -- as in the case of Android phone and tablet applications. There are some languages that are both!  The list of all the strengths and weaknesses of each category are hotly debated, but at the end of the day what is important is if the program will be good enough for the task at hand.</p>
+
+<h2>Programmer Lazyness</h2>
+<p>There is a saying that "programmers are lazy". This is partially correct. Programmers are "lazy" because they want to be efficient, meaning that they expect the effort given to yield great returns. Also, we don't want to do more than it is necessary whenever possible. Although, when doing one's own project it feels great to be deeply involved with many details that can be non-essential -- there is joy in just doing something for heck of it.</p>
+
+<h2>From Code to Execution</h2>
+<p>Most languages go through multiple conversions, checks, and optimizations before they even begin executing.</p>
+
+<p>The following is an example of the amount of work required to get a working program running, as in the case of an interpreted language. The steps are achieved by a compiler and a virtual machine. The <b>compiler</b> may take a file, with some higher level language in it, and will go through a lexical analysis (checking for valid symbols), syntax analysis (ensuring that there is proper order of the symbols), semantic analysis (ensuring the meaning is correct). The compiler then begins creating intermediate code that facilitates the translation that ends at target code (often times an assembly-like code). From here a <b>virtual machine</b> takes that target code, will assemble byte code (which is now a pool of just zeros and ones), and eventually will begin executing instructions. Of course, the vm must interact with the oprating system prior to all of this work!</p>
+
+<p>In some computer science colleges the virtual machine and compiler are part of graduation requirements. In total the programmer may write several thousands of lines of code -- and a single error somewhere in the code is enough to be very problematic.</p>
+
+<h2>Hello, World</h2>
+<p>Many programmers begin with a "Hello, World" program. Here are some examples in several languages.</p>
+
+<pre class="codebox">
+// C
+#include &lt;stdio.h&gt;
+main() {
+  printf("Hello, World");
+}
+
+// C++
+#include &lt;iostream&gt
+int main() {
+  std::cout &lt;&lt; "Hello, World";
+  return 0;
+}
+
+// D
+import std.stdio;
+void main() {
+  writeln("Hello, World");
+}
+
+// Java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World");
+  }
+}
+
+// SML
+- "Hello, World"
+- val it = "Hello, World" : string
+
+' BlitzMax
+Print "Hello World"
+
+// JavaScript
+console.log('Hello, World');</pre>
+
+<p>Many programmers are aware of multiple languages, and it's good to know which one may be the most suited for the work to be done.</p>
+
+<h2>Links</h2>
+<p>Many times one has to download some programs in order to begin programming. I would strongly encourage the use of text editors to begin programming. An <b>IDE</b> (Integrated Development Environment) is another option which facilitates development -- but they may do a lot of things the programmer is not aware of so when you do try to run programs in other machines the program could not work. Here are some links for editors and compilers:</p>
+<ul>
+  <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+  <li><a href="http://codeblocks.org" target="_blank">CodeBlocks for C, C++</a></li>
+  <li><a href="http://mingw.org" target="_blank">MinGW for C, C++</a></li>
+  <li><a href="http://www.blitzbasic.com/Community/posts.php?topic=107435" target="_blank">BlitzMax</a></li>
+  <li><a href="http://www.blitzbasic.com/Community/posts.php?topic=107434" target="_blank">Blitz3D</a></li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java SE</a></li>
+  <li><a href="https://dlang.org" target="_blank">DLang</a></li>
+  <li><a href="https://www.visualstudio.com" target="_blank">Microsoft Visual Studio for a variety of languages.</a></li>
+  <li><a href="http://www.smlnj.org" target="_blank">Standard ML of New Jersey</a></li>
+  <li><a href="https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac" target="_blank">C# and .NET Core on a Mac</a></li>
+</ul>
+
+<h2>Web Interfaces</h2>
+<p>Alternatively you can program right from the browser -- no downloads required! If the code is good then consider saving it as a local file.</p>
+<ul>
+  <li><a href="http://www.cpp.sh" target="_blank">C++ Shell</a></li>
+  <li><a href="http://dlang.org" target="_blank">D Lang</a></li>
+</ul>
+
+<p>Regardless of the way you choose to program the important thing is to improve understanding, achieve functional programs. Having fun and making some money are also good possibilities.</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>

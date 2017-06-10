@@ -1,0 +1,22 @@
+title:::xMath.io
+cleanUrl:::xmath.io
+localUrl:::file:///op/websites/_export/<<<cleanUrl>>>
+realUrl:::http://<<<cleanUrl>>>
+url:::<<<realUrl>>>
+backupUrl:::http://www.lemming.life/sites/<<<cleanUrl>>>
+cssjs:::<meta charset="UTF-8"> 
+<link rel="stylesheet" type="text/css" href="<<<url>>>/cssjs/style.css" />
+<script src="<<<url>>>/cssjs/script.js"></script>
+<script src="<<<url>>>/cssjs/angular-min.js"></script>
+header:::
+footer:::
+
+<div class="links">
+  <b>More: </b>
+  <a href="<<<url>>>/index.html">Basic Maths</a>
+</div>
+
+<div class="footer">
+<span id="copyYear"></span> <a href="<<<url>>>/index.html"><<<title>>></a>
+ &emsp; <a href="<<<url>>>/support/index.html">Support</a>
+</div>

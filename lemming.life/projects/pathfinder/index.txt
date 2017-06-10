@@ -1,0 +1,15 @@
+title:::Path Finder
+listNextPages:::false
+listPreviousPages:true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Path Finder</h1>
+<h4>Download</h4>
+<p><a href="https://github.com/lemming-life/PathFinder" target="_blank">https://github.com/lemming-life/PathFinder</a></p>
+
+</h2>Info</h2>
+<p>Path Finder is a Mac app designed to navigate directories. The main difference with the built-in FInder is in that it adds a text box with the current working directory.</p>
+
+<div id="previousPagesContainer"><h3>Other Projects</h3></div>
+</div>

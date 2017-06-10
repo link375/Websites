@@ -1,0 +1,145 @@
+body {
+  width: 100%; margin: 0;
+  display: none;
+}
+
+h1, h2 {
+  margin: 12px 0px 0px 0px;
+  padding: 0;
+}
+
+h3, h4 {
+  margin: 8px 0px 0px 0px;
+  padding: 0;
+}
+
+hr { margin: 0; }
+p { margin: 8px 0px 8px 0px; }
+a img { outline: none; }
+img { border: 0;}
+
+a {
+    color: #bb2222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #bb2222;
+}
+
+ul {
+    margin-top: 0px; padding-top: 0px;
+}
+
+#topNavContainer {
+    background-color: #229922;
+    text-align: center;
+    padding: 5px;
+}
+
+#navItems { display: none; }
+
+div.itemImg {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.item a {
+    color: #ffffff;
+    padding: 10px;
+}
+
+div.item div a:hover {
+    color: #bb2222;
+}
+
+div.center {
+    text-align:center;
+}
+
+
+.standardBoxing {
+    display: block;
+    width: auto; height: auto;
+    margin: 0px 10px 0px 10px;
+    word-wrap: break-word;
+}
+
+div.header {
+    width: auto; height: auto;
+    margin-left: 0;
+}
+            
+div.body {
+    width: auto; height: 640px;
+    display: block;
+    background-color: #ffffff;
+    position: relative;
+}
+            
+div.footer {
+    display: table;
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #229922;
+    text-align: center;
+    color: #ffffff;
+}
+
+div.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.vspacing {
+    display: block;
+    height:10px; width: 1px;
+    position: relative;
+}
+
+#logo {
+    width: 35px; height: 37px;
+}
+
+@media screen and (min-width: 560px) {
+    #navItems { display: inline-block; }
+    #topNavContainer { text-align: left; }
+}
+
+pre {
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 5px;
+}
+
+pre.text {
+  background-color:#cccccc;
+}
+
+.codebox {
+    font-size: small;
+    background-color:#cccccc;
+    font-family: monospace;
+    padding: 5px;
+}
+
+
+.simpleCode {
+    font-size: small;
+    font-weight: bold;
+    font-family: "Courier New", "Lucida Console";
+    padding:12px;
+    background-color: #227722;
+}

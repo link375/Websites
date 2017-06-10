@@ -1,0 +1,270 @@
+title:::Practices
+listNextPages:::false
+listPreviousPages:true
+cssjs:::
+firstContent:::
+content:::<div class="standardBoxing">
+<h1>Practices</h1>
+<p>This is similar to principles, but differ in that they are not code.</p>
+
+<h2>Practices</h2>
+<ul>
+<li><a href="#section_globals">Globals</a></li>
+<li><a href="#section_magicnumbers">Magic Numbers</a></li>
+<li><a href="#section_comments">Comments</a></li>
+<li><a href="#section_toomanycomments">Too Many Comments</a></li>
+<li><a href="#section_goto">Goto</a></li>
+<li><a href="#section_optimizers">Optimizers</a></li>
+</ul>
+
+
+<h2 id="section_globals">Globals</h2>
+<p>Variables that are in a global scope are often discouraged. The reason for having globals is convenience in being able to affect many areas. For example, if you had a DEBUG global boolean you can do trace statements in many functions by having a simple check and then printing some statement. When you create the final executable you can set the DEBUG global to false, and you would not see trace statements.  Cool right?</p>
+<p>The not so cool part of globals is in the fact that programs will become larger. When these programs become larger and their functionality depends on globals then you are at risk of causing unwanted behavior. For example, function A and B use global X.  If function A modifies the global, but B didn't expect the global to have changed, then whatever function B produces will be invalid. Furthermore, tracking globals is a headache.</p>
+
+<h2 id="section_magicnumbers">Magic Numbers</h2>
+<p>Magic numbers are numbers that are placed in several spots throughout the program, but they may not necessarily indicate what they do. Furthermore there may be several spots in which a number is present, and if one has to modify the number then one must modify all the places where this number is present.</p>
+
+<p>Here's a program in which we make a variable be 2 if its value is 0, otherwise we increment the existing value by 2.</p>
+<h4>With Magic Numbers</h4>
+<div class="codebox"><div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// Java</span></div>
+<br /><div>
+<span style="color: #ff005e;">class</span> MyJavaProgram {</div>
+<br /><div>
+    <span style="color: #ff005e;">public</span> <span style="color: #ff005e;">static</span> <span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>(<span style="color: #41ffff; font-style: italic;">String</span>[] <span style="color: #ffb800; font-style: italic;">args</span>) {</div>
+<div>
+        <span style="color: #41ffff; font-style: italic;">int</span> x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+        </div>
+<div>
+        <span style="color: #ff005e;">if</span> (x <span style="color: #ff005e;">==</span> <span style="color: #f082ff;">0</span>) {</div>
+<div>
+            x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">2</span>;      <span style="color: #c2b889;">// 2 is a magic number</span></div>
+<div>
+        } <span style="color: #ff005e;">else</span> {</div>
+<div>
+            x <span style="color: #ff005e;">=</span> x <span style="color: #ff005e;">+</span> <span style="color: #f082ff;">2</span>;  <span style="color: #c2b889;">// 2 is a magic number</span></div>
+<div>
+        }</div>
+<br /><div>
+        <span style="color: #41ffff; font-style: italic;">System</span><span style="color: #ff005e;">.</span>out<span style="color: #ff005e;">.</span>println(x); </div>
+<div>
+    }</div>
+<div>
+}</div>
+</div></div>
+
+<h4>Without Magic Numbers</h4>
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// Java</span></div>
+<br /><div>
+<span style="color: #ff005e;">class</span> MyJavaProgram {</div>
+<br /><div>
+    <span style="color: #ff005e;">public</span> <span style="color: #ff005e;">static</span> <span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>(<span style="color: #41ffff; font-style: italic;">String</span>[] <span style="color: #ffb800; font-style: italic;">args</span>) {</div>
+<div>
+        <span style="color: #41ffff; font-style: italic;">int</span> x <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+        <span style="color: #41ffff; font-style: italic;">int</span> incrementValue <span style="color: #ff005e;">=</span> <span style="color: #f082ff;">2</span>; <span style="color: #c2b889;">// Can modify whenever, and affects positions A and B</span></div>
+<div>
+        </div>
+<div>
+        <span style="color: #ff005e;">if</span> (x <span style="color: #ff005e;">==</span> <span style="color: #f082ff;">0</span>) {</div>
+<div>
+            x <span style="color: #ff005e;">=</span> incrementValue;      <span style="color: #c2b889;">// Position A</span></div>
+<div>
+        } <span style="color: #ff005e;">else</span> {</div>
+<div>
+            x <span style="color: #ff005e;">=</span> x <span style="color: #ff005e;">+</span> incrementValue;  <span style="color: #c2b889;">// Position B</span></div>
+<div>
+        }</div>
+<br /><div>
+        <span style="color: #41ffff; font-style: italic;">System</span><span style="color: #ff005e;">.</span>out<span style="color: #ff005e;">.</span>println(x); </div>
+<div>
+    }</div>
+<div>
+}</div>
+</div>
+
+
+<h2 id="section_comments">Comments</h2>
+<p>Many programmers want to write programs and hopefully get the job done as quickly as possible. There are rarely incentives for being a slow developer -- does a comment actually "do" something? No.   However, this approach to programming is more likely than not going to disregard the possibility of easy maintenance. In a few months from now the same programmer may check on the code again, and chances are that if the code isn't clear that he wishes that comments had been written. Every person that maintains old code wants and needs comments. So, writing comments is a courtesy to one self and to other fellow programmers. Although, there are arguments in that if a programmer is the only one who knows how something works then he is less likely to be fired... a good supervisor would note the programmer's behavior and hopefully fire someone early on enough such that the projects do not go in this direction.</p>
+
+<p>Comments can be used for <b>Writing by Contract</b> which means that the programmer has <b>preconditions</b> and <b>postconditions</b>. The preconditions means that data to be passed to a function must be set in a certain way, it must meet certain conditions. If the conditions are met then the programmer guarantees that the postconditions will occur. In a way, writing by contract sets the style of coding that must be present.</p>
+
+
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px;  line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// DLang</span></div>
+<div>
+<span style="color: #ff005e;">import</span> <span style="color: #41ffff; font-style: italic;">std.stdio</span>;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">class</span> Rectangle {</div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> width, height;</div>
+<div>
+    <span style="color: #dcff00; font-weight: bold;">this</span>( ) { width = <span style="color: #f082ff;">0</span>; height = <span style="color: #f082ff;">0</span>; }</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">getArea1</span>(Rectangle aRectangle) {</div>
+<div>
+    <span style="color: #c2b889;">// Preconditions: takes a Rectangle object.</span></div>
+<div>
+    <span style="color: #c2b889;">// Postconditions: returns the area of a rectangle as an integer, </span></div>
+<div>
+    <span style="color: #c2b889;">//  returns -1 if the passed rectangle is null</span></div>
+<div>
+    <span style="color: #ff005e;">if</span> (aRectangle <span style="color: #ff005e;">is</span> <span style="color: #f082ff;">null</span>) <span style="color: #ff005e;">return</span> <span style="color: #ff005e;">-</span><span style="color: #f082ff;">1</span>;</div>
+<div>
+    <span style="color: #ff005e;">return</span> aRectangle.width <span style="color: #ff005e;">*</span> aRectangle.height;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">getArea2</span>(Rectangle aRectangle) {</div>
+<div>
+    <span style="color: #c2b889;">// Preconditions: function takes a Rectangle object that is NOT null.</span></div>
+<div>
+    <span style="color: #c2b889;">// Postconditions: returns the area of a rectangle as an integer.</span></div>
+<div>
+    <span style="color: #ff005e;">return</span> aRectangle.width <span style="color: #ff005e;">*</span> aRectangle.height;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">void</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    Rectangle myRectangle = <span style="color: #f082ff;">null</span>;</div>
+<br /><div>
+    <span style="color: #c2b889;">// Example 1</span></div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> area1 = getArea1(myRectangle); <span style="color: #c2b889;">// All conditions are met, so we expect -1 to be here.</span></div>
+<br /><div>
+    <span style="color: #c2b889;">// Example 2</span></div>
+<div>
+    <span style="color: #41ffff; font-style: italic;">int</span> area2 = getArea2(myRectangle); <span style="color: #c2b889;">// What do you think is going to happen here?</span></div>
+<div>
+    <span style="color: #c2b889;">// The programmer did NOT meet the precondition of the function </span></div>
+<div>
+    <span style="color: #c2b889;">// (the object must NOT be null),</span></div>
+<div>
+    <span style="color: #c2b889;">// so the function is not under any responsiblity of providing the area as an integer.</span></div>
+<div>
+    <span style="color: #c2b889;">// Btw, D will output a segmentation fault when compiling.</span></div>
+<div>
+}</div>
+</div>
+</div>
+
+<h2 id="section_toomanycomments">Too Many Comments</h2>
+<p>Too few comments are a problem, many comments is another evil... although usually a better choice. Comments are important, but it is possible to be overcommenting. Furthermore adding comments to every function, in which comments cover all possibilities, can yield more busy work, lead to confusion, and may even have comedic value in the sense that the comments are just excessive when compared to the function size.</p>
+<p>Whenever possible having <b>clear code</b>, which means well defined naming, can serve as way of being a comment.</p>
+
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;stdio.h&gt;</span></div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">f</span>( <span style="color: #41ffff; font-style: italic;">int</span> x, <span style="color: #41ffff; font-style: italic;">int</span> y ) {</div>
+<div>
+    <span style="color: #c2b889;">// This horrible name of a function forces us to have comments</span></div>
+<div>
+    <span style="color: #c2b889;">// because we don't know what the "f" does. </span></div>
+<div>
+    <span style="color: #c2b889;">// It would be better to have a more descriptive name, such as "doSum".</span></div>
+<br /><div>
+    <span style="color: #c2b889;">// Function name: f</span></div>
+<div>
+    <span style="color: #c2b889;">// Inputs: x as int, y as int</span></div>
+<div>
+    <span style="color: #c2b889;">// Outputs: the sum of x and y as int.</span></div>
+<div>
+    <span style="color: #c2b889;">// Precondition: </span></div>
+<div>
+    <span style="color: #c2b889;">//   x must be an int passed by value</span></div>
+<div>
+    <span style="color: #c2b889;">//   y must be an int passed by value</span></div>
+<div>
+    <span style="color: #c2b889;">//   Integers must be 4 bytes in size.</span></div>
+<div>
+    <span style="color: #c2b889;">//   (this latter one may be very important!  In some languages sizes are determined in others it isn't)</span></div>
+<div>
+    <span style="color: #c2b889;">// Postconditions: the function returns an integer with the value being the sum of x and y.</span></div>
+<div>
+        </div>
+<div>
+    <span style="color: #c2b889;">// Do sum of x and y, return the value.  (TRIVIAL isn't it?)</span></div>
+<div>
+    <span style="color: #ff005e;">return</span> x <span style="color: #ff005e;">+</span> y;</div>
+<div>
+}</div>
+<br /><div>
+<span style="color: #c2b889;">// The program entry point</span></div>
+<div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>( <span style="color: #41ffff; font-style: italic;">int</span> argc, <span style="color: #ff005e;">const</span> <span style="color: #41ffff; font-style: italic;">char</span><span style="color: #ff005e;">*</span> argv[] ) {</div>
+<div>
+    <span style="color: #c2b889;">// Call the sum function with 2 and 4 as values passed, and print out the result.</span></div>
+<div>
+    <span style="color: #41ffff;">printf</span>( <span style="color: #ffff63;">"</span><span style="color: #f082ff;">%d</span><span style="color: #ffff63;">"</span>, <span style="color: #dcff00; font-weight: bold;">f</span>( <span style="color: #f082ff;">2</span>, <span style="color: #f082ff;">4</span> ) );</div>
+<br /><div>
+    <span style="color: #c2b889;">// Finish the program.</span></div>
+<div>
+    <span style="color: #ff005e;">return</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+}</div>
+</div>
+</div>
+
+<h2 id="section_goto">Goto</h2>
+<p>The goto statement is a way to change the flow of the executing program. It may be convenient in some areas. But, as of late this is discouraged because it has the potential of causing problems. One example being the fact that you may skip important code that should be executed.</p>
+
+<div class="codebox">
+<div style="background-color: #252525; color: #f8f8f2; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 4px; white-space: pre;">
+<div>
+<span style="color: #c2b889;">// C++ 11</span></div>
+<div>
+<span style="color: #ff005e;">#include</span> <span style="color: #ffff63;">&lt;iostream&gt;</span></div>
+<div>
+<span style="color: #ff005e;">using</span> <span style="color: #41ffff; font-style: italic;">namespace</span> std;</div>
+<br /><div>
+<span style="color: #41ffff; font-style: italic;">class</span> Lemming {</div>
+<div>
+    <span style="color: #ff005e;">public:</span></div>
+<div>
+    <span style="color: #dcff00; font-weight: bold;">Lemming</span>() { }</div>
+<div>
+    <span style="color: #dcff00; font-weight: bold;">~Lemming</span>() { cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">"deleting</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">"</span>; }</div>
+<div>
+};</div>
+<br /><div>
+<div>
+    </div>
+<span style="color: #41ffff; font-style: italic;">int</span> <span style="color: #dcff00; font-weight: bold;">main</span>() {</div>
+<div>
+    Lemming<span style="color: #ff005e;">*</span> myLemming <span style="color: #ff005e;">=</span> <span style="color: #ff005e;">new</span> <span style="color: #dcff00; font-weight: bold;">Lemming</span>();</div>
+<div>
+    <span style="color: #ff005e;">goto</span> endProgram; <span style="color: #c2b889;">// Control changes from here to endProgram:</span></div>
+<br /><div>
+    <span style="color: #ff005e;">delete</span> myLemming; <span style="color: #c2b889;">// Do we ever free this memory? No.</span></div>
+<br /><div>
+    </div>
+<div>
+    endProgram:</div>
+<div>
+    cout <span style="color: #ff005e;">&lt;&lt;</span> <span style="color: #ffff63;">"done</span><span style="color: #f082ff;">\n</span><span style="color: #ffff63;">"</span>;</div>
+<div>
+    <span style="color: #ff005e;">return</span> <span style="color: #f082ff;">0</span>;</div>
+<div>
+}</div>
+</div>
+</div>
+
+<h2 id="section_optimizers">Optimizers</h2>
+<p>In modern times many tools programmers use include code optimizers. These optimizers may remove or rearrange code such that the program can execute faster. So what's the problem? Well, when you are writing code it is important to ensure that it functions properly before optimization. It is possible that the optimizer changes code such that you view output that you do want, or in the better situation may give you bad output. The latter allows you to question things while the first may lead you to believe something that is not so. If your code doesn't work well without the optimizer then the optimizer is creating a false situation, which may eventually be caught when you try to recompile with another compiler. So, it is important to NOT have the optimizer on while you are writing your code.</p>
+
+<div id="previousPagesContainer"><h3>Previous Pages</h3></div>
+</div>
