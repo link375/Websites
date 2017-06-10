@@ -9,7 +9,7 @@ content:::
 <p>There are several web projects that lemming.life is working on. Some are simple and fairly static, other sites are dynamic and server-sided. Over time some of the projects will die, but some may be successful. Only time will tell.</p>
 <p>All of them will be open source.</p>
 <ul>
-<li><a href="<<<settings.url>>>"><<<settings.cleanUrl>>></a>: A repository of stuff. <a href="">Source</a>.</li>
- <li><a href="http://xmath.io" target="_blank">xMath.io</a>: Math operations, calculators, conversions, timers, and more. Uses AngularJS. <a href="">Source</a>.</li>
+<li><a href="<<<settings.url>>>"><<<settings.cleanUrl>>></a>: A repository of stuff. <a href="https://github.com/lemming-life/Websites/tree/master/lemming.life">Source</a>.</li>
+ <li><a href="http://xmath.io" target="_blank">xMath.io</a>: Math operations, calculators, conversions, timers, and more. Uses AngularJS. <a href="https://github.com/lemming-life/Websites/tree/master/xmath.io">Source</a>.</li>
 </ul>
 </div>
